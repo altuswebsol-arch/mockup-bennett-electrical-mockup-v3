@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bennett Electrical Services | Electricians in Birmingham & Solihull in Birmingham</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#10B3FE;--blue-d:#0a8fd4;--navy:#0a0f24;--navy2:#101832;--gold:#c9a227;--ink:#17202f;--muted:#5b6b82;--light:#f5f8fc}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,'Segoe UI',Roboto,sans-serif;color:var(--ink);line-height:1.65;background:#fff;-webkit-font-smoothing:antialiased}
+.serif{font-family:'Playfair Display',Georgia,serif}
+a{text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+/* reveal on scroll */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+/* topbar */
+.topbar{background:var(--navy);color:#dbe4f2;font-size:13px;padding:9px 0;letter-spacing:.3px}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.topbar a{color:var(--blue);font-weight:700}
+/* nav */
+.nav{background:rgba(255,255,255,.96);backdrop-filter:blur(10px);box-shadow:0 2px 18px rgba(10,15,36,.08);position:sticky;top:0;z-index:60}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center;padding:16px 24px}
+.logo{font-family:'Playfair Display',serif;font-size:24px;font-weight:800;color:var(--navy)}
+.logo span{color:var(--blue-d)}
+.navlinks{display:flex;gap:28px;align-items:center}
+.navlinks a{color:var(--navy);font-weight:600;font-size:15px;position:relative}
+.navlinks a:not(.btn):hover{color:var(--blue-d)}
+.btn{display:inline-block;padding:15px 34px;border-radius:12px;font-weight:700;font-size:16px;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
+.btn-blue{background:linear-gradient(135deg,var(--blue),var(--blue-d));color:#04121f;box-shadow:0 10px 26px rgba(16,179,254,.35)}
+.btn-blue:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(16,179,254,.45)}
+.btn-blue::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);transition:left .5s}
+.btn-blue:hover::after{left:130%}
+.btn-ghost{border:2px solid rgba(255,255,255,.7);color:#fff;background:transparent}
+.btn-ghost:hover{background:rgba(255,255,255,.14);transform:translateY(-2px)}
+.btn-nav{padding:11px 24px;font-size:15px}
+/* HERO SLIDER */
+.hero{position:relative;background:radial-gradient(1100px 520px at 85% -10%,#16265c 0%,transparent 60%),linear-gradient(125deg,#0a0f24 0%,#101c46 55%,#0a0f24 100%);color:#fff;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.35;animation:drift 12s ease-in-out infinite alternate}
+.b1{width:420px;height:420px;background:#10B3FE;top:-140px;right:-100px}
+.b2{width:300px;height:300px;background:#2743a8;bottom:-120px;left:-80px;animation-delay:-6s}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(40px,30px) scale(1.12)}}
+.slides{position:relative;min-height:660px}
+.slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .9s ease,visibility .9s;display:flex;align-items:center;background-size:cover;background-position:center}
+.slide.on{opacity:1;visibility:visible;z-index:2}
+.hero-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(10,15,36,.95) 15%,rgba(10,15,36,.78) 52%,rgba(10,15,36,.30) 100%)}
+.slide .wrap{position:relative;z-index:2;width:100%;padding-top:80px;padding-bottom:80px}
+.slide .copy{max-width:680px}
+.slide .copy .eyebrow{display:inline-block;background:rgba(16,179,254,.14);border:1px solid rgba(16,179,254,.55);color:var(--blue);font-weight:700;font-size:12.5px;letter-spacing:2.5px;text-transform:uppercase;padding:9px 20px;border-radius:30px;margin-bottom:24px}
+.slide h1{font-family:'Playfair Display',serif;font-size:clamp(40px,5.6vw,68px);line-height:1.08;font-weight:800;margin-bottom:20px;letter-spacing:-.5px}
+.slide h1 em{font-style:italic;background:linear-gradient(120deg,#7fdcff,var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+.slide p.lead{font-size:19px;color:#c2cfe4;max-width:540px;margin-bottom:36px}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+.trust{display:flex;gap:26px;margin-top:42px;flex-wrap:wrap}
+.trust div{display:flex;align-items:center;gap:10px;color:#c2cfe4;font-size:15px;font-weight:600}
+.tick{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--blue-d));color:#04121f;display:inline-flex;align-items:center;justify-content:center;font-weight:800}
+.sdots{position:absolute;bottom:26px;left:0;right:0;display:flex;gap:10px;justify-content:center;z-index:5}
+.sdots button{width:34px;height:5px;border-radius:4px;border:none;background:rgba(255,255,255,.25);cursor:pointer;transition:.3s}
+.sdots button.on{background:var(--blue);width:52px}
+.sarrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(255,255,255,.06);color:#fff;font-size:20px;cursor:pointer;transition:.25s}
+.sarrow:hover{background:var(--blue);border-color:var(--blue);color:#04121f}
+.sprev{left:18px}.snext{right:18px}
+/* strip */
+.strip{background:linear-gradient(90deg,var(--gold),#e3c766,var(--gold));color:#241a02;padding:15px 0;font-weight:700;font-size:16px;text-align:center;letter-spacing:.3px}
+/* sections */
+section{padding:96px 0}
+.sec-head{text-align:center;max-width:680px;margin:0 auto 58px}
+.kicker{color:var(--blue-d);font-weight:800;letter-spacing:3px;text-transform:uppercase;font-size:13px}
+.sec-head h2{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,46px);font-weight:800;color:var(--navy);margin:12px 0 16px;letter-spacing:-.5px}
+.sec-head p{color:var(--muted);font-size:18px}
+.sec-head h2 em{font-style:italic;color:var(--blue-d)}
+/* services: alternating columns */
+.svc-row{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:44px 0}
+.svc-row:nth-child(odd) .svc-txt{order:1}
+.svc-row:nth-child(odd) .svc-vis{order:2}
+/* photo treatments — real photography, premium frames */
+.svc-vis{display:flex;align-items:center}
+.ph{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 26px 60px rgba(10,15,36,.22);border:1px solid rgba(16,179,254,.18);width:100%}
+.ph img{display:block;width:100%;height:340px;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.ph:hover img{transform:scale(1.07)}
+.ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,15,36,.32));pointer-events:none}
+.svc-txt .kicker{font-size:12px}
+.svc-txt h3{font-family:'Playfair Display',serif;font-size:clamp(26px,3vw,34px);color:var(--navy);margin:10px 0 14px;font-weight:800}
+.svc-txt p{color:var(--muted);font-size:17px;margin-bottom:22px;max-width:480px}
+.svc-link{color:var(--blue-d);font-weight:700;font-size:16px}
+.svc-link:hover{text-decoration:underline}
+/* guarantee band */
+.guar{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.guar::before{content:"";position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(16,179,254,.14),transparent 70%);top:-200px;left:-200px}
+.guar .sec-head h2{color:#fff}.guar .sec-head p{color:#a9b8d0}
+.ggrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;position:relative}
+.gcard{background:rgba(255,255,255,.045);border:1px solid rgba(16,179,254,.28);border-radius:18px;padding:34px 28px;transition:.3s}
+.gcard:hover{transform:translateY(-8px);background:rgba(16,179,254,.1);box-shadow:0 20px 44px rgba(0,0,0,.35)}
+.gcard .gi{font-size:34px;margin-bottom:16px;display:block}
+.gcard h3{font-size:19px;margin-bottom:8px;font-weight:700}
+.gcard p{color:#a9b8d0;font-size:15px}
+/* marquee gallery */
+.marq{background:var(--light);overflow:hidden}
+.mtrack{display:flex;gap:26px;width:max-content;animation:marq 30s linear infinite;padding:10px 0}
+.mtrack:hover{animation-play-state:paused}
+@keyframes marq{to{transform:translateX(-50%)}}
+.mcard{width:320px;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 34px rgba(10,15,36,.1);flex:0 0 auto;transition:.3s}
+.mcard:hover{transform:translateY(-6px)}
+.mcard .mvis{height:200px;overflow:hidden;position:relative}
+.mcard .mvis img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.mcard:hover .mvis img{transform:scale(1.08)}
+.mcard .mbody{padding:24px}
+.mcard h4{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);margin-bottom:8px}
+.mcard p{color:var(--muted);font-size:15px}
+/* why */
+.whygrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px}
+.whyitem{background:#fff;border:1px solid #e6ecf3;border-radius:18px;padding:36px 30px;transition:.3s;position:relative;overflow:hidden}
+.whyitem::after{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(var(--blue),var(--blue-d));transform:scaleY(0);transform-origin:top;transition:.3s}
+.whyitem:hover{transform:translateY(-8px);box-shadow:0 22px 46px rgba(10,15,36,.12)}
+.whyitem:hover::after{transform:scaleY(1)}
+.whyitem .n{font-family:'Playfair Display',serif;font-size:15px;font-weight:800;color:var(--blue-d);letter-spacing:2px}
+.whyitem h3{font-size:20px;margin:10px 0;color:var(--navy);font-weight:700}
+.whyitem p{color:var(--muted);font-size:15.5px}
+/* quote slider */
+.qsec{background:linear-gradient(125deg,#0a0f24,#16265c);color:#fff;text-align:center;position:relative;overflow:hidden}
+.qslides{position:relative;max-width:820px;margin:0 auto;min-height:230px}
+.qslide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .8s;padding:0 20px}
+.qslide.on{opacity:1;visibility:visible;position:relative}
+.qslide .qmark{font-family:'Playfair Display',serif;font-size:80px;color:var(--blue);line-height:1;opacity:.7}
+.qslide p{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(22px,3vw,30px);line-height:1.5;margin:6px 0 18px}
+.qslide .qwho{color:var(--blue);font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:13px}
+.qdots{display:flex;gap:10px;justify-content:center;margin-top:26px}
+.qdots button{width:12px;height:12px;border-radius:50%;border:none;background:rgba(255,255,255,.25);cursor:pointer;transition:.3s}
+.qdots button.on{background:var(--blue);transform:scale(1.25)}
+/* areas */
+.arealist{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.arealist span{background:#fff;border:1.5px solid #dbe4ef;padding:11px 24px;border-radius:30px;font-weight:600;color:var(--navy);font-size:15px;transition:.25s}
+.arealist span:hover{border-color:var(--blue);color:var(--blue-d);transform:translateY(-2px)}
+/* cta */
+.cta{background:radial-gradient(800px 400px at 50% 0%,#1a2a5e 0%,transparent 60%),linear-gradient(120deg,#0a0f24,#101c46);color:#fff;text-align:center;position:relative;overflow:hidden}
+.cta h2{font-family:'Playfair Display',serif;font-size:clamp(34px,5vw,56px);font-weight:800;margin-bottom:16px}
+.cta h2 em{font-style:italic;color:var(--blue)}
+.cta p{color:#c2cfe4;font-size:19px;max-width:560px;margin:0 auto 32px}
+.bigphone{font-family:'Playfair Display',serif;font-size:clamp(34px,5vw,54px);font-weight:800;color:#fff;margin-bottom:28px;display:inline-block;transition:.25s}
+.bigphone:hover{color:var(--blue);transform:scale(1.03)}
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.cinfo h3{font-family:'Playfair Display',serif;font-size:26px;color:var(--navy);margin-bottom:20px}
+.crow{display:flex;gap:16px;margin-bottom:20px;align-items:flex-start}
+.crow .ic{width:50px;height:50px;flex:0 0 50px;border-radius:14px;background:linear-gradient(135deg,rgba(16,179,254,.16),rgba(16,179,254,.06));display:flex;align-items:center;justify-content:center;font-size:22px}
+.crow b{display:block;color:var(--navy);font-size:15px}
+.crow span{color:var(--muted);font-size:16px}
+.hours{background:var(--light);border-radius:16px;padding:24px;margin-top:10px}
+.hours h4{color:var(--navy);margin-bottom:12px;font-size:17px}
+.hours div{display:flex;justify-content:space-between;font-size:15px;color:var(--muted);padding:5px 0;border-bottom:1px dashed #dbe4ef}
+.hours div:last-child{border:none}
+.form{background:#fff;border:1px solid #e6ecf3;border-radius:20px;padding:38px;box-shadow:0 20px 50px rgba(10,15,36,.1)}
+.form h3{font-family:'Playfair Display',serif;color:var(--navy);font-size:26px;margin-bottom:6px}
+.form>p{color:var(--muted);font-size:15px;margin-bottom:22px}
+.form input,.form textarea,.form select{width:100%;padding:15px 17px;border:1.5px solid #dbe4ef;border-radius:12px;font-size:16px;margin-bottom:14px;font-family:inherit;transition:.2s;background:#fbfcfe}
+.form input:focus,.form textarea:focus,.form select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 4px rgba(16,179,254,.14);background:#fff}
+.form button{width:100%}
+/* footer */
+footer{background:#070b1c;color:#8fa0ba;padding:50px 0 34px;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;align-items:center}
+.flogo{font-family:'Playfair Display',serif;color:#fff;font-weight:800;font-size:22px}
+.flogo span{color:var(--blue)}
+.mocknote{margin-top:30px;padding:30px 20px 6px;border-top:1px solid rgba(255,255,255,.1);text-align:center}
+.mocknote .badge{display:inline-block;border:1.5px solid var(--blue);border-radius:30px;padding:11px 30px;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
+.mocknote p{color:#6b7c96;font-size:13.5px;max-width:640px;margin:0 auto}
+.mocknote a{color:var(--blue)}
+@media(max-width:900px){.slide p.lead{margin:0 auto 34px}.slide .copy{text-align:center;margin:0 auto}.hero-cta,.trust{justify-content:center}.svc-row{grid-template-columns:1fr;gap:26px;text-align:center}.svc-row .svc-txt{order:2!important}.svc-row .svc-vis{order:1!important}.svc-txt p{margin:0 auto 22px}.ph img{height:260px}.contact-grid{grid-template-columns:1fr}.navlinks a:not(.btn){display:none}.sarrow{display:none}.slides{min-height:720px}}
+</style>
+
+</head>
+<body>
+<div class="topbar"><div class="wrap"><span>Electricians — Birmingham &amp; Solihull</span><span>Call now: <a href="tel:07779986055">07779 986055</a></span></div></div>
+<nav class="nav"><div class="wrap"><div class="logo"><span>Bennett</span> Electrical Services</div>
+<div class="navlinks"><a href="#services">Services</a><a href="#why">Why Us</a><a href="#areas">Areas</a><a href="#contact">Contact</a>
+<a class="btn btn-blue btn-nav" href="tel:07779986055">Get a Free Quote</a></div></div></nav>
+
+<header class="hero"><div class="blob b1"></div><div class="blob b2"></div>
+<div class="slides"><div class="slide on" style="background-image:url('img/bolt-0.jpg')"><div class="hero-shade"></div><div class="wrap">
+        <div class="copy"><span class="eyebrow">Birmingham's Local Electricians</span><h1>Safe, Tidy Electrics <em>for Your Home.</em></h1>
+        <p class="lead">Rewires, fuse boards, lighting, alarms and CCTV — domestic electrical work across Birmingham and Solihull, done safely and neatly.</p>
+        <div class="hero-cta"><a class="btn btn-blue" href="tel:07779986055">&#x1F4DE; 07779 986055</a>
+        <a class="btn btn-ghost" href="#contact">Get a Free Quote</a></div>
+        <div class="trust"><div><span class="tick">&#10003;</span>Domestic specialists</div><div><span class="tick">&#10003;</span>Rewires &amp; fuse boards</div><div><span class="tick">&#10003;</span>Alarms &amp; CCTV</div></div></div>
+        </div></div><div class="slide" style="background-image:url('img/bolt-1.jpg')"><div class="hero-shade"></div><div class="wrap">
+        <div class="copy"><span class="eyebrow">Birmingham's Local Electricians</span><h1>Electrics Playing Up? <em>Call Bennett.</em></h1>
+        <p class="lead">Rewires &mdash; Fuse Boards &mdash; Lighting.</p>
+        <div class="hero-cta"><a class="btn btn-blue" href="tel:07779986055">&#x1F4DE; 07779 986055</a>
+        <a class="btn btn-ghost" href="#contact">Get a Free Quote</a></div>
+        <div class="trust"><div><span class="tick">&#10003;</span>Domestic specialists</div><div><span class="tick">&#10003;</span>Rewires &amp; fuse boards</div><div><span class="tick">&#10003;</span>Alarms &amp; CCTV</div></div></div>
+        </div></div><div class="slide" style="background-image:url('img/bolt-2.jpg')"><div class="hero-shade"></div><div class="wrap">
+        <div class="copy"><span class="eyebrow">Birmingham's Local Electricians</span><h1>One Call. <em>Sorted.</em></h1>
+        <p class="lead">💡 Free advice on your electrics — just call and ask.</p>
+        <div class="hero-cta"><a class="btn btn-blue" href="tel:07779986055">&#x1F4DE; 07779 986055</a>
+        <a class="btn btn-ghost" href="#contact">Get a Free Quote</a></div>
+        <div class="trust"><div><span class="tick">&#10003;</span>Domestic specialists</div><div><span class="tick">&#10003;</span>Rewires &amp; fuse boards</div><div><span class="tick">&#10003;</span>Alarms &amp; CCTV</div></div></div>
+        </div></div>
+<button class="sarrow sprev" aria-label="previous">&#8249;</button>
+<button class="sarrow snext" aria-label="next">&#8250;</button>
+<div class="sdots"><button class="on" aria-label="slide 1"></button><button class="" aria-label="slide 2"></button><button class="" aria-label="slide 3"></button></div></div></header>
+
+<div class="strip">💡 Free advice on your electrics — just call and ask.</div>
+
+<section id="services"><div class="wrap">
+<div class="sec-head rv"><div class="kicker">Our Services</div><h2>Crafted Around <em>What You Do Best</em></h2>
+<p>Every service, presented beautifully &mdash; built to win enquiries.</p></div>
+<div class="svc-row rv">
+        <div class="svc-vis"><div class="ph"><img loading="lazy" src="img/bolt-0.jpg" alt="Electrician at work"></div></div>
+        <div class="svc-txt"><div class="kicker">Service 01</div><h3>🔌 Rewires</h3><p>Full and partial rewires with minimal mess and disruption.</p>
+        <a class="svc-link" href="#contact">Get a quote for this &rarr;</a></div></div><div class="svc-row rv">
+        <div class="svc-vis"><div class="ph"><img loading="lazy" src="img/bolt-1.jpg" alt="Electrician at work"></div></div>
+        <div class="svc-txt"><div class="kicker">Service 02</div><h3>📦 Fuse Boards</h3><p>Consumer unit upgrades for safer, compliant electrics.</p>
+        <a class="svc-link" href="#contact">Get a quote for this &rarr;</a></div></div><div class="svc-row rv">
+        <div class="svc-vis"><div class="ph"><img loading="lazy" src="img/bolt-2.jpg" alt="Electrician at work"></div></div>
+        <div class="svc-txt"><div class="kicker">Service 03</div><h3>💡 Lighting</h3><p>Indoor and outdoor lighting design and installation.</p>
+        <a class="svc-link" href="#contact">Get a quote for this &rarr;</a></div></div><div class="svc-row rv">
+        <div class="svc-vis"><div class="ph"><img loading="lazy" src="img/bolt-0.jpg" alt="Electrician at work"></div></div>
+        <div class="svc-txt"><div class="kicker">Service 04</div><h3>🔔 Alarms &amp; CCTV</h3><p>Burglar alarms and CCTV systems for peace of mind.</p>
+        <a class="svc-link" href="#contact">Get a quote for this &rarr;</a></div></div><div class="svc-row rv">
+        <div class="svc-vis"><div class="ph"><img loading="lazy" src="img/bolt-1.jpg" alt="Electrician at work"></div></div>
+        <div class="svc-txt"><div class="kicker">Service 05</div><h3>🔍 Fault Finding</h3><p>Quick diagnosis of tripping circuits and electrical faults.</p>
+        <a class="svc-link" href="#contact">Get a quote for this &rarr;</a></div></div><div class="svc-row rv">
+        <div class="svc-vis"><div class="ph"><img loading="lazy" src="img/bolt-2.jpg" alt="Electrician at work"></div></div>
+        <div class="svc-txt"><div class="kicker">Service 06</div><h3>📋 Safety Checks</h3><p>Electrical safety inspections and landlord certificates.</p>
+        <a class="svc-link" href="#contact">Get a quote for this &rarr;</a></div></div></div></section>
+
+<section class="guar"><div class="wrap">
+<div class="sec-head rv"><div class="kicker">Why Choose Us</div><h2>The Difference Is in <em>the Details</em></h2>
+<p>Straightforward, reliable, and local &mdash; the way it should be.</p></div>
+<div class="ggrid"><div class="gcard rv"><span class="gi">&#x1F6E1;</span><h3>Tidy workmanship</h3><p>Dust sheets down, shoes covered, mess cleared.</p></div><div class="gcard rv"><span class="gi">&#x2728;</span><h3>Honest advice</h3><p>We'll tell you what you need — not what pads the bill.</p></div><div class="gcard rv"><span class="gi">&#x1F4AC;</span><h3>Fair pricing</h3><p>Sensible rates with written quotes.</p></div><div class="gcard rv"><span class="gi">&#x1F3E0;</span><h3>Local</h3><p>Based in Sheldon, serving Birmingham and Solihull.</p></div></div></div></section>
+
+<section class="marq" style="padding:70px 0"><div class="wrap">
+<div class="sec-head rv"><div class="kicker">What We Do</div><h2>Take a <em>Look Around</em></h2></div></div>
+<div class="mtrack"><div class="mcard"><div class="mvis"><img loading="lazy" src="img/bolt-0.jpg" alt="Electrician at work"></div>
+        <div class="mbody"><h4>Rewires</h4><p>Full and partial rewires with minimal mess and disruption.</p></div></div><div class="mcard"><div class="mvis"><img loading="lazy" src="img/bolt-1.jpg" alt="Electrician at work"></div>
+        <div class="mbody"><h4>Fuse Boards</h4><p>Consumer unit upgrades for safer, compliant electrics.</p></div></div><div class="mcard"><div class="mvis"><img loading="lazy" src="img/bolt-2.jpg" alt="Electrician at work"></div>
+        <div class="mbody"><h4>Lighting</h4><p>Indoor and outdoor lighting design and installation.</p></div></div><div class="mcard"><div class="mvis"><img loading="lazy" src="img/bolt-0.jpg" alt="Electrician at work"></div>
+        <div class="mbody"><h4>Alarms &amp; CCTV</h4><p>Burglar alarms and CCTV systems for peace of mind.</p></div></div><div class="mcard"><div class="mvis"><img loading="lazy" src="img/bolt-1.jpg" alt="Electrician at work"></div>
+        <div class="mbody"><h4>Fault Finding</h4><p>Quick diagnosis of tripping circuits and electrical faults.</p></div></div><div class="mcard"><div class="mvis"><img loading="lazy" src="img/bolt-2.jpg" alt="Electrician at work"></div>
+        <div class="mbody"><h4>Safety Checks</h4><p>Electrical safety inspections and landlord certificates.</p></div></div><div class="mcard"><div class="mvis"><img loading="lazy" src="img/bolt-0.jpg" alt="Electrician at work"></div>
+        <div class="mbody"><h4>Rewires</h4><p>Full and partial rewires with minimal mess and disruption.</p></div></div><div class="mcard"><div class="mvis"><img loading="lazy" src="img/bolt-1.jpg" alt="Electrician at work"></div>
+        <div class="mbody"><h4>Fuse Boards</h4><p>Consumer unit upgrades for safer, compliant electrics.</p></div></div><div class="mcard"><div class="mvis"><img loading="lazy" src="img/bolt-2.jpg" alt="Electrician at work"></div>
+        <div class="mbody"><h4>Lighting</h4><p>Indoor and outdoor lighting design and installation.</p></div></div><div class="mcard"><div class="mvis"><img loading="lazy" src="img/bolt-0.jpg" alt="Electrician at work"></div>
+        <div class="mbody"><h4>Alarms &amp; CCTV</h4><p>Burglar alarms and CCTV systems for peace of mind.</p></div></div><div class="mcard"><div class="mvis"><img loading="lazy" src="img/bolt-1.jpg" alt="Electrician at work"></div>
+        <div class="mbody"><h4>Fault Finding</h4><p>Quick diagnosis of tripping circuits and electrical faults.</p></div></div><div class="mcard"><div class="mvis"><img loading="lazy" src="img/bolt-2.jpg" alt="Electrician at work"></div>
+        <div class="mbody"><h4>Safety Checks</h4><p>Electrical safety inspections and landlord certificates.</p></div></div></div></section>
+
+<section id="why"><div class="wrap">
+<div class="sec-head rv"><div class="kicker">Good to Know</div><h2>Why Customers <em>Pick Bennett</em></h2>
+<p>No gimmicks &mdash; just honest, quality work.</p></div>
+<div class="whygrid"><div class="whyitem rv"><div class="n">01</div><h3>Tidy workmanship</h3><p>Dust sheets down, shoes covered, mess cleared.</p></div><div class="whyitem rv"><div class="n">02</div><h3>Honest advice</h3><p>We'll tell you what you need — not what pads the bill.</p></div><div class="whyitem rv"><div class="n">03</div><h3>Fair pricing</h3><p>Sensible rates with written quotes.</p></div><div class="whyitem rv"><div class="n">04</div><h3>Local</h3><p>Based in Sheldon, serving Birmingham and Solihull.</p></div></div></div></section>
+
+<section class="qsec"><div class="wrap"><div class="qslides"><div class="qslide on"><div class="qmark">&ldquo;</div><p>A website that works as hard as you do &mdash; built to turn visitors into paying customers.</p><div class="qwho">The Altus Promise</div></div><div class="qslide"><div class="qmark">&ldquo;</div><p>Clear pricing, honest advice, and a site you'll be proud to share.</p><div class="qwho">How We Work</div></div><div class="qslide"><div class="qmark">&ldquo;</div><p>Your business, presented at its absolute best &mdash; on every device.</p><div class="qwho">Mobile-First Design</div></div></div>
+<div class="qdots"><button class="on" aria-label="quote 1"></button><button class="" aria-label="quote 2"></button><button class="" aria-label="quote 3"></button></div></div></section>
+
+<section id="areas" style="background:var(--light)"><div class="wrap">
+<div class="sec-head rv"><div class="kicker">Service Areas</div><h2>Proudly <em>Local</em></h2>
+<p>Serving homes and businesses across the region.</p></div>
+<div class="arealist rv"><span>Sheldon</span><span>Birmingham</span><span>Solihull</span><span>Acocks Green</span><span>Yardley</span><span>Hall Green</span><span>Knowle</span></div></div></section>
+
+<section class="cta"><div class="wrap rv">
+<h2>Electrics Playing Up? <em>Call Bennett.</em></h2>
+<p>One call and we&rsquo;ll take it from there.</p>
+<a class="bigphone" href="tel:07779986055">07779 986055</a><br>
+<a class="btn btn-blue" href="#contact">Request Your Free Quote</a></div></section>
+
+<section id="contact"><div class="wrap">
+<div class="sec-head rv"><div class="kicker">Get In Touch</div><h2>Let&rsquo;s Talk About <em>Your Project</em></h2>
+<p>Call, message or send the form &mdash; we reply fast.</p></div>
+<div class="contact-grid"><div class="cinfo rv"><h3>Contact Details</h3>
+<div class="crow"><div class="ic">&#x1F4DE;</div><div><b>Phone</b><span>07779 986055</span></div></div>
+<div class="crow"><div class="ic">&#x2709;&#xFE0F;</div><div><b>Email</b><span>info@bennettelectricalservices.co.uk</span></div></div>
+<div class="crow"><div class="ic">&#x1F4CD;</div><div><b>Based in</b><span>Birmingham</span></div></div>
+<div class="hours"><h4>Opening Hours</h4><div><span>Monday – Friday</span><span>8:00am – 6:00pm</span></div><div><span>Saturday</span><span>9:00am – 2:00pm</span></div></div></div>
+<form class="form rv" onsubmit="return false"><h3>Request a Free Quote</h3>
+<p>Fill this in and we will get back to you shortly.</p>
+<input placeholder="Your name" required><input placeholder="Phone number" type="tel" required>
+<input placeholder="Email address" type="email">
+<select><option>What do you need help with?</option><option>Rewires</option><option>Fuse Boards</option><option>Lighting</option><option>Alarms &amp; CCTV</option><option>Fault Finding</option><option>Safety Checks</option></select>
+<textarea rows="4" placeholder="Tell us about the job..."></textarea>
+<button class="btn btn-blue" type="submit">Send Enquiry &rarr;</button></form>
+</div></div></section>
+
+<footer><div class="wrap"><div><div class="flogo"><span>Bennett</span> Electrical Services</div>
+<div style="margin-top:8px">Electricians — Birmingham &amp; Solihull.</div></div>
+<div>&copy; 2026 Bennett Electrical Services. All rights reserved.</div></div>
+<div class="wrap"><div class="mocknote">
+<span class="badge">&#10022; Concept by <a href="https://altuswebsolutions.com">Altus Web Solutions</a> &#10022;</span>
+<p>Free homepage concept crafted exclusively for Bennett Electrical Services. Your photos, logo and details slot straight in &mdash; <a href="https://altuswebsolutions.com">ask us</a> about the full website.</p>
+</div></div></footer>
+
+<script>
+(function(){
+var slides=document.querySelectorAll('.slide'),dots=document.querySelectorAll('.sdots button'),i=0,n=slides.length,t;
+function go(k){slides[i].classList.remove('on');dots[i].classList.remove('on');i=(k+n)%n;slides[i].classList.add('on');dots[i].classList.add('on');}
+function auto(){clearInterval(t);t=setInterval(function(){go(i+1)},6000);}
+dots.forEach(function(d,k){d.addEventListener('click',function(){go(k);auto();});});
+document.querySelector('.sprev').addEventListener('click',function(){go(i-1);auto();});
+document.querySelector('.snext').addEventListener('click',function(){go(i+1);auto();});
+auto();
+var qs=document.querySelectorAll('.qslide'),qd=document.querySelectorAll('.qdots button'),j=0;
+setInterval(function(){qs[j].classList.remove('on');qd[j].classList.remove('on');j=(j+1)%qs.length;qs[j].classList.add('on');qd[j].classList.add('on');},5000);
+qd.forEach(function(d,k){d.addEventListener('click',function(){qs[j].classList.remove('on');qd[j].classList.remove('on');j=k;qs[j].classList.add('on');qd[j].classList.add('on');});});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+})();
+</script>
+
+</body>
+</html>
